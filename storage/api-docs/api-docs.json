@@ -1,0 +1,186 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Blog API",
+        "description": "Basic CRUD for Blog",
+        "contact": {
+            "name": "Developer Team",
+            "email": "developer@wposs.com"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/blog": {
+            "get": {
+                "tags": [
+                    "BlogController"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BlogSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "BlogController"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BlogSchema"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BlogSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/blog/{id}": {
+            "get": {
+                "tags": [
+                    "BlogController"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "An uuid string identifying this blog",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BlogSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "BlogController"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "An uuid string identifying this blog",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BlogSchema"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BlogSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "BlogController"
+                ],
+                "operationId": "App\\Http\\Controllers\\BlogController::findAll",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "An uuid string identifying this blog",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "BlogSchema": {
+                "title": "Blog",
+                "required": [
+                    "name",
+                    "author"
+                ],
+                "properties": {
+                    "id": {
+                        "title": "Id",
+                        "description": "",
+                        "type": "string",
+                        "readOnly": "true",
+                        "example": "c31e414b-2dc2-426b-aae8-8c866cae3ca4"
+                    },
+                    "name": {
+                        "title": "Name",
+                        "description": "",
+                        "type": "string"
+                    },
+                    "author": {
+                        "title": "Author",
+                        "description": "",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "title": "Created Date",
+                        "description": "",
+                        "type": "string",
+                        "readOnly": "true",
+                        "example": "2020-09-02T17:26:19.000"
+                    },
+                    "updated_at": {
+                        "title": "Updated Date",
+                        "description": "",
+                        "type": "string",
+                        "readOnly": "true",
+                        "example": "2020-09-02T17:26:19.000"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

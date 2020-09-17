@@ -1,6 +1,6 @@
 # Development server
 
-Run `php -S localhost:8000 -t public` for a dev server. Navigate to `http://localhost:8000/`.
+Run `php -S localhost:8000 -t public` to a dev server. Navigate to `http://localhost:8000/api/documentation` to see the api documentation.
 
 # Lumen PHP Framework
 

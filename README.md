@@ -1,3 +1,7 @@
+# Development server
+
+Run `php -S localhost:8000 -t public` for a dev server. Navigate to `http://localhost:8000/`.
+
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
